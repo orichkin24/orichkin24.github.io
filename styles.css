@@ -1,12 +1,16 @@
-/* Zenith Vault - Policy Pages Stylesheet */
+/* ZenithVault - Policy Pages Stylesheet */
 
-/* Base styles */
+/* Base styles with dark mode */
 :root {
-  --primary-color: #3a86ff;
-  --secondary-color: #8338ec;
-  --text-color: #333;
-  --light-bg: #f8f9fa;
-  --border-color: #dee2e6;
+  --primary-color: #D500F9; /* Bright purple from logo */
+  --secondary-color: #E040FB; /* Light purple from logo */
+  --accent-color: #7B1FA2; /* Medium purple from logo */
+  --dark-accent: #4A148C; /* Dark purple from logo */
+  --text-color: #E0E0E0; /* Light gray for text */
+  --dark-bg: #121212; /* Dark background */
+  --darker-bg: #0A0A0A; /* Darker background for contrast */
+  --card-bg: #1E1E1E; /* Slightly lighter than background for cards */
+  --border-color: #333333; /* Dark border */
 }
 
 * {
@@ -19,7 +23,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: var(--text-color);
-  background-color: var(--light-bg);
+  background-color: var(--dark-bg);
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -30,11 +34,25 @@ header {
   padding: 20px 0;
   border-bottom: 1px solid var(--border-color);
   margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container svg {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
 }
 
 header h1 {
   color: var(--primary-color);
-  margin-bottom: 15px;
+  margin-bottom: 0;
 }
 
 nav ul {
@@ -57,10 +75,10 @@ nav a:hover {
 
 /* Main content styles */
 main {
-  background-color: white;
+  background-color: var(--card-bg);
   padding: 30px;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   margin-bottom: 30px;
 }
 
@@ -79,10 +97,12 @@ h2 {
   font-size: 1.8em;
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 0.3em;
+  color: var(--secondary-color);
 }
 
 h3 {
   font-size: 1.5em;
+  color: var(--accent-color);
 }
 
 p {
@@ -100,12 +120,22 @@ li {
 
 strong {
   font-weight: 600;
+  color: var(--secondary-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 /* Effective date styling */
 .effective-date {
   font-style: italic;
-  color: #666;
+  color: #999;
   margin-bottom: 2em;
 }
 
@@ -113,7 +143,7 @@ strong {
 footer {
   text-align: center;
   padding: 20px 0;
-  color: #666;
+  color: #999;
   font-size: 0.9em;
   border-top: 1px solid var(--border-color);
 }
@@ -139,5 +169,14 @@ footer {
   
   h3 {
     font-size: 1.3em;
+  }
+  
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  nav {
+    margin-top: 15px;
   }
 }
